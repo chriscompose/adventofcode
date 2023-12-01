@@ -1,7 +1,7 @@
 import days.DayOne
 import java.io.File
 
-fun main(args: Array<String>) {
+fun main() {
 
     /**
      * DAY 1 - Calibration Document for Elves
@@ -29,4 +29,10 @@ fun main(args: Array<String>) {
         }
     }
     println("Calibration Code for second puzzle: " + dayOne.puzzleDayOne(listOfStringsTwo))
+
+    /**
+     *  DAY 2 - Title
+     */
+
+    // PART ONE
 }
