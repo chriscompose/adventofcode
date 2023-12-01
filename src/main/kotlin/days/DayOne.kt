@@ -11,10 +11,8 @@ class DayOne {
         return calibratedNumber
     }
 
-
-
     private fun calculateNumbersInLines(calibrationDoc: List<String>): List<Int> {
-        var listOfNums = mutableListOf<Int>()
+        val listOfNums = mutableListOf<Int>()
 
         calibrationDoc.forEach {
             val digitOne = pickFirstNumber(it)
@@ -38,5 +36,17 @@ class DayOne {
             }
         }
         return firstNumber
+    }
+
+    fun replaceWordNumbers(line: String): String {
+        return line.replace("one", "o1e")
+            .replace("two", "t2")
+            .replace("three", "t3e")
+            .replace("four", "4")
+            .replace("five", "5e")
+            .replace("six", "6")
+            .replace("seven", "7n")
+            .replace("eight", "e8t")
+            .replace("nine", "n9e")
     }
 }
