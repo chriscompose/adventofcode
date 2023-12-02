@@ -11,7 +11,6 @@ class DayTwo {
     fun puzzleDayTwo(games: List<String>): Int {
 
         var sumOfPossibleGames = 0
-
         games.map {
             val redCubes = it.regexColours("red")
             val greenCubes = it.regexColours("green")
@@ -19,6 +18,19 @@ class DayTwo {
             if (redCubes <= 12 && greenCubes <= 13 && blueCubes <= 14) {
                 sumOfPossibleGames += Regex("\\d+").find(it)?.value?.toInt() ?: 0
             }
+        }
+        return sumOfPossibleGames
+    }
+
+    fun puzzleDayTwoSecondPart(games: List<String>): Int {
+
+        var sumOfPossibleGames = 0
+
+        games.map {
+            val redCubes = it.regexColours("red")
+            val greenCubes = it.regexColours("green")
+            val blueCubes = it.regexColours("blue")
+            sumOfPossibleGames += redCubes * greenCubes * blueCubes
         }
         return sumOfPossibleGames
     }
