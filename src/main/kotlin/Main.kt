@@ -47,4 +47,7 @@ fun main() {
     }
     println("Total sum of legit games: " + dayTwo.puzzleDayTwo(gamesList))
 
+    // PART TWO
+    println("Total sum of legit games with new rules: " + dayTwo.puzzleDayTwoSecondPart(gamesList))
+
 }
