@@ -65,4 +65,7 @@ fun main() {
         }
     }
     println("Test Day Three: " + dayThree.puzzleDayThree(engineSchematicList))
+
+    // PART TWO
+    println("Test Day Three, second part: " + dayThree.puzzleDayThreeSecondPart(engineSchematicList))
 }

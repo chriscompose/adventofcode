@@ -5,8 +5,19 @@ class DayThree {
     fun puzzleDayThree(engineParts: List<String>): Int {
         val (numbers, symbols) = parseLine(engineParts)
         return numbers
-            .filter { number -> number.isAdjacentToAny(symbols) }
+            .filter { number -> number.isAdjacent(symbols) }
             .sumOf { it.toInt() }
+    }
+
+    fun puzzleDayThreeSecondPart(engineParts: List<String>): Int {
+        val (numbers, symbols) = parseLine(engineParts) { it == '*' }
+        return symbols
+            .sumOf { symbol ->
+                val neighbors = numbers.filter { it.isAdjacentToStar(symbol) }
+                if (neighbors.size == 2) {
+                    neighbors.first().toInt() * neighbors.last().toInt()
+                } else 0
+            }
     }
 
     private fun parseLine(
@@ -51,11 +62,14 @@ class DayThree {
         fun isNotEmpty() =
             number.isNotEmpty()
 
-        fun isAdjacentToAny(coordinates: Set<Coordinator>): Boolean =
+        fun isAdjacent(coordinates: Set<Coordinator>): Boolean =
             this.coordinates.intersect(coordinates).isNotEmpty()
 
         fun toInt(): Int =
             number.joinToString("").toInt()
+
+        fun isAdjacentToStar(coordinates: Coordinator): Boolean =
+            coordinates in this.coordinates
     }
 
 }
