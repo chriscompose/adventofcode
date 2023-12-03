@@ -52,7 +52,7 @@ fun main() {
     println("Total sum of legit games with new rules: " + dayTwo.puzzleDayTwoSecondPart(gamesList))
 
     /**
-     * DAY - Engine Schematic List for Parts
+     * DAY 3 - Engine Schematic List for Parts
      */
 
     // PART ONE
