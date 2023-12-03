@@ -1,4 +1,5 @@
 import days.DayOne
+import days.DayThree
 import days.DayTwo
 import java.io.File
 
@@ -33,14 +34,14 @@ fun main() {
     println("Calibration Code for second puzzle: " + dayOne.puzzleDayOne(calibrationListTwo))
 
     /**
-     *  DAY 2 - Colour Cubes
+     * DAY 2 - Colour Cubes
      */
 
     // PART ONE
     val gamesList = mutableListOf<String>()
     val dayTwo = DayTwo()
 
-    File("$path/d2p1.txt").useLines { lines ->
+    File("$path/d3p1.txt").useLines { lines ->
         lines.forEach {
             gamesList.add(it)
         }
@@ -50,4 +51,18 @@ fun main() {
     // PART TWO
     println("Total sum of legit games with new rules: " + dayTwo.puzzleDayTwoSecondPart(gamesList))
 
+    /**
+     * DAY - Engine Schematic List for Parts
+     */
+
+    // PART ONE
+    val engineSchematicList = mutableListOf<String>()
+    val dayThree = DayThree()
+
+    File("$path/d3p1.txt").useLines { lines ->
+        lines.forEach {
+            engineSchematicList.add(it)
+        }
+    }
+    println("Test Day Three: " + dayThree.puzzleDayThree(engineSchematicList))
 }
