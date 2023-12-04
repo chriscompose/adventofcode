@@ -84,4 +84,7 @@ fun main() {
         }
     }
     println("Total puzzle one, day four: " + dayFour.puzzleDayFour(scratchCards))
+
+    // PART TWO
+    println("Total puzzle two, day four: " + dayFour.puzzleDayFourSecondPart(scratchCards))
 }
