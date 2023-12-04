@@ -1,3 +1,4 @@
+import days.DayFour
 import days.DayOne
 import days.DayThree
 import days.DayTwo
@@ -68,4 +69,19 @@ fun main() {
 
     // PART TWO
     println("Test Day Three, second part: " + dayThree.puzzleDayThreeSecondPart(engineSchematicList))
+
+    /**
+     *  DAY 4 - Scratchcards & Winning Numbers
+     */
+
+    // PART ONE
+    val scratchCards = mutableListOf<String>()
+    val dayFour = DayFour()
+
+    File("$path/d4p1.txt").useLines { lines ->
+        lines.forEach {
+            scratchCards.add(it)
+        }
+    }
+    println("Total puzzle one, day four: " + dayFour.puzzleDayFour(scratchCards))
 }
